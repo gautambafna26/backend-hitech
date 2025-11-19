@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     # ✅ your apps
     'user_management',
+    'inventory',
 ]
 
 REST_FRAMEWORK = {
