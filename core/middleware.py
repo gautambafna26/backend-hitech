@@ -13,8 +13,11 @@ class JWTCookieAuthentication(JWTAuthentication):
         header = self.get_header(request)
         
         if header is not None:
-            # If Authorization header is present, use it
-            return super().authenticate(request)
+            # If Authorization header is present, try it first
+            result = super().authenticate(request)
+            # If header auth succeeded, return it. If it failed (None), fall back to cookie.
+            if result is not None:
+                return result
             
         # If no Authorization header, try to get token from cookie
         raw_token = request.COOKIES.get('access_token')
