@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     # ✅ your apps
     'user_management',
     'inventory',
+    'customer'
 ]
 
 REST_FRAMEWORK = {
