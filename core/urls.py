@@ -22,4 +22,5 @@ urlpatterns = [
     path('api/', include('user_management.urls')),
     path('api/', include('inventory.urls')),
     path('api/', include('customer.urls')),
+    # path('api/', include('deal_pipeline.urls')),
 ]
